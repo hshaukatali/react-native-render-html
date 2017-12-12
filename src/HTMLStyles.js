@@ -111,6 +111,9 @@ function cssToRNStyle (css, styleset, { parentTag, emSize, ignoredStyles }) {
                 value];
         })
         .map(([key, value]) => {
+            if(value == 'inherit')
+             return undefined
+
             if (!styleProps[key]) {
                 return undefined;
             }
